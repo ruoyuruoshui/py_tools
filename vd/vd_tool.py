@@ -41,6 +41,7 @@ def rename_vd(tmp_path, vd_path):
         old_name_with_path = tmp_path + os.sep + file_list[n]
         to_path = vd_path
         if new_name.find("dark.xml") == len(new_name) - len("dark.xml"):
+            new_name = new_name.replace("_dark", "")
             to_path = vd_path + os.sep + "dark"
         new_name_with_path = to_path + os.sep + "lg_widget_core" + new_name.lower()
         os.rename(old_name_with_path, new_name_with_path)
