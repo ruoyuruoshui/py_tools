@@ -35,15 +35,19 @@ def rename_vd(tmp_path, vd_path):
     
     for vd in file_list:
         if os.path.isdir(vd):
+            n += 1
             continue
         new_name = amend_name(file_list[n])
-            
+
+        if new_name.find("_1.xml") == len(new_name) - len("_1.xml"):
+            n += 1
+            continue
         old_name_with_path = tmp_path + os.sep + file_list[n]
         to_path = vd_path
         if new_name.find("dark.xml") == len(new_name) - len("dark.xml"):
             new_name = new_name.replace("_dark", "")
             to_path = vd_path + os.sep + "dark"
-        new_name_with_path = to_path + os.sep + "lg_widget_core" + new_name.lower()
+        new_name_with_path = to_path + os.sep + "lg_vd_" + new_name.lower()
         os.rename(old_name_with_path, new_name_with_path)
         #print(new_name_with_path + "\n")
         n += 1
