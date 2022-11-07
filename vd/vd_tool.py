@@ -47,7 +47,7 @@ def rename_vd(tmp_path, vd_path):
         if new_name.find("dark.xml") == len(new_name) - len("dark.xml"):
             new_name = new_name.replace("_dark", "")
             to_path = vd_path + os.sep + "dark"
-        new_name_with_path = to_path + os.sep + "lg_vd_" + new_name.lower()
+        new_name_with_path = to_path + os.sep + "" + new_name.lower()
         os.rename(old_name_with_path, new_name_with_path)
         #print(new_name_with_path + "\n")
         n += 1
