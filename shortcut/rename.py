@@ -58,7 +58,7 @@ if __name__ == "__main__":
     #check_file("shortcut/st_car/action_condition", "shortcut/shortcut_image/action_condition")
 
     ac_map = read_map("shortcut/action_condition.map")
-    rename("shortcut/st_car/action_condition", "st_image/action_condition", ac_map)
+    rename("shortcut/shortcut_image/action_condition", "st_image/action_condition", ac_map)
 
     copy_file_to("shortcut/st_car/card", "st_image/card")
 
